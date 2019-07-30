@@ -32,6 +32,7 @@ defmodule QuestionTest do
       build_question(generators: generators).substitutions
     end)
     |> Enum.find(fn substitution ->
-      Keyword.fetch!(substitution, :left) == number end)
+      Keyword.fetch!(substitution, :left) == number
+    end)
   end
 end

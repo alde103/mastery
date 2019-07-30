@@ -4,7 +4,7 @@ defmodule Mastery.Core.Question do
   defstruct ~w[asked substitutions template]a
 
   # Constructor
-  def new(%Template{ } = template) do
+  def new(%Template{} = template) do
     template.generators
     |> Enum.map(&build_substitution/1)
     |> evaluate(template)
@@ -17,6 +17,7 @@ defmodule Mastery.Core.Question do
   defp choose(choices) when is_list(choices) do
     Enum.random(choices)
   end
+
   # La función debe ser de arity 0...
   defp choose(generator) when is_function(generator) do
     generator.()
