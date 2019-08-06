@@ -1,5 +1,6 @@
 defmodule Mastery.Examples.Math do
   alias Mastery.Core.Quiz
+
   def template_fields() do
     [
       name: :single_digit_addition,
@@ -22,12 +23,12 @@ defmodule Mastery.Examples.Math do
   end
 
   def quiz_fields() do
-    %{ mastery: 2, title: :simple_addition}
+    %{mastery: 2, title: :simple_addition}
   end
 
   def quiz() do
     quiz_fields()
-    |> Quiz.new
+    |> Quiz.new()
     |> Quiz.add_template(template_fields())
   end
 end
